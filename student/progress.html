@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Score AI Student Progress - Track your learning progress.">
+  <title>Student Progress — Score AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="site-layout">
+  <header class="dashboard-header" role="banner">
+    <div class="container dashboard-header-inner">
+      <a href="../index.html" class="brand">SCORE AI</a>
+      <nav class="dashboard-nav" role="navigation" aria-label="Student navigation">
+        <a href="dashboard.html" class="dashboard-nav-link">Dashboard</a>
+        <a href="questions.html" class="dashboard-nav-link">Questions</a>
+        <a href="mcqs.html" class="dashboard-nav-link">MCQs</a>
+        <a href="tests.html" class="dashboard-nav-link">Tests</a>
+        <a href="progress.html" class="dashboard-nav-link" aria-current="page">Progress</a>
+        <a href="bookmarks.html" class="dashboard-nav-link">Bookmarks</a>
+        <a href="codi.html" class="dashboard-nav-link">Codi AI</a>
+      </nav>
+      <button class="btn btn-ghost btn-icon theme-toggle" data-theme-toggle aria-label="Toggle theme">
+        <svg data-theme-icon="sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        <svg data-theme-icon="moon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+      </button>
+      <button class="btn btn-ghost">Logout</button>
+    </div>
+  </header>
+
+  <main class="dashboard-main" role="main">
+    <div class="container">
+      <div class="space-y-8">
+        <div>
+          <h1 class="dashboard-title display-4">Progress</h1>
+          <p class="dashboard-subtitle">Track your learning progress across all subjects.</p>
+        </div>
+
+        <div class="stat-grid">
+          <article class="card stat-card">
+            <p class="stat-label">Overall Completion</p>
+            <p class="stat-value" style="color: var(--blueprint);">54%</p>
+          </article>
+          <article class="card stat-card">
+            <p class="stat-label">Questions Done</p>
+            <p class="stat-value">127</p>
+          </article>
+          <article class="card stat-card">
+            <p class="stat-label">Accuracy Rate</p>
+            <p class="stat-value" style="color: var(--urgent);">78%</p>
+          </article>
+          <article class="card stat-card">
+            <p class="stat-label">Study Streak</p>
+            <p class="stat-value" style="color: var(--priority-important);">12 days</p>
+          </article>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="card">
+            <div class="card-header">
+              <h2 class="card-title">Subject Progress</h2>
+            </div>
+            <div class="card-content">
+              <div class="space-y-6">
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <div>
+                      <p class="font-medium">Mathematics</p>
+                      <p class="caption text-muted">15 chapters · 127 questions</p>
+                    </div>
+                    <p class="heading-3" style="color: var(--blueprint);">65%</p>
+                  </div>
+                  <div class="progress-bar"><div class="progress-bar-fill" style="width: 65%; background: var(--blueprint);"></div></div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <div>
+                      <p class="font-medium">Science</p>
+                      <p class="caption text-muted">16 chapters · 89 questions</p>
+                    </div>
+                    <p class="heading-3" style="color: var(--urgent);">48%</p>
+                  </div>
+                  <div class="progress-bar"><div class="progress-bar-fill" style="width: 48%; background: var(--urgent);"></div></div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <div>
+                      <p class="font-medium">Social Science</p>
+                      <p class="caption text-muted">20 chapters · 45 questions</p>
+                    </div>
+                    <p class="heading-3" style="color: var(--priority-important);">32%</p>
+                  </div>
+                  <div class="progress-bar"><div class="progress-bar-fill" style="width: 32%; background: var(--priority-important);"></div></div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <div>
+                      <p class="font-medium">English</p>
+                      <p class="caption text-muted">12 chapters · 23 questions</p>
+                    </div>
+                    <p class="heading-3" style="color: var(--priority-standard);">71%</p>
+                  </div>
+                  <div class="progress-bar"><div class="progress-bar-fill" style="width: 71%; background: var(--priority-standard);"></div></div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <div>
+                      <p class="font-medium">Hindi</p>
+                      <p class="caption text-muted">10 chapters · 12 questions</p>
+                    </div>
+                    <p class="heading-3" style="color: var(--priority-standard);">40%</p>
+                  </div>
+                  <div class="progress-bar"><div class="progress-bar-fill" style="width: 40%; background: var(--priority-standard);"></div></div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <div>
+                      <p class="font-medium">Information Technology</p>
+                      <p class="caption text-muted">8 chapters · 8 questions</p>
+                    </div>
+                    <p class="heading-3" style="color: var(--priority-standard);">25%</p>
+                  </div>
+                  <div class="progress-bar"><div class="progress-bar-fill" style="width: 25%; background: var(--priority-standard);"></div></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-header">
+              <h2 class="card-title">Weak Areas (Priority Focus)</h2>
+            </div>
+            <div class="card-content">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between p-4 border border-graphite rounded-lg">
+                  <div>
+                    <p class="font-medium">Polynomials — Zeroes & Coefficients</p>
+                    <p class="caption text-muted">Mathematics · Priority: 85 · 45% accuracy</p>
+                  </div>
+                  <span class="priority-pill priority-pill-high" data-score="85">85</span>
+                </div>
+                <div class="flex items-center justify-between p-4 border border-graphite rounded-lg">
+                  <div>
+                    <p class="font-medium">Chemical Reactions — Balancing Equations</p>
+                    <p class="caption text-muted">Science · Priority: 82 · 52% accuracy</p>
+                  </div>
+                  <span class="priority-pill priority-pill-high" data-score="82">82</span>
+                </div>
+                <div class="flex items-center justify-between p-4 border border-graphite rounded-lg">
+                  <div>
+                    <p class="font-medium">Nationalism in India — Non-Cooperation</p>
+                    <p class="caption text-muted">Social Science · Priority: 68 · 58% accuracy</p>
+                  </div>
+                  <span class="priority-pill priority-pill-important" data-score="68">68</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <article class="card">
+          <div class="card-header">
+            <h2 class="card-title">Weekly Activity</h2>
+          </div>
+          <div class="card-content">
+            <div style="display: flex; gap: var(--space-2); overflow-x: auto; padding-bottom: var(--space-2);">
+              <div style="flex: 0 0 60px; text-align: center;">
+                <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--blueprint); margin: 0 auto var(--space-2); display: flex; align-items: center; justify-content: center; color: var(--paper); font-weight: 600;">Mon</div>
+                <div style="height: 80px; background: var(--graphite); border-radius: var(--radius); position: relative;">
+                  <div style="position: absolute; bottom: 0; width: 100%; height: 65%; background: var(--blueprint); border-radius: var(--radius) var(--radius) 0 0;"></div>
+                </div>
+                <p class="caption text-muted mt-2">45 min</p>
+              </div>
+              <div style="flex: 0 0 60px; text-align: center;">
+                <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--urgent); margin: 0 auto var(--space-2); display: flex; align-items: center; justify-content: center; color: var(--paper); font-weight: 600;">Tue</div>
+                <div style="height: 80px; background: var(--graphite); border-radius: var(--radius); position: relative;">
+                  <div style="position: absolute; bottom: 0; width: 100%; height: 45%; background: var(--urgent); border-radius: var(--radius) var(--radius) 0 0;"></div>
+                </div>
+                <p class="caption text-muted mt-2">32 min</p>
+              </div>
+              <div style="flex: 0 0 60px; text-align: center;">
+                <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--priority-important); margin: 0 auto var(--space-2); display: flex; align-items: center; justify-content: center; color: var(--paper); font-weight: 600;">Wed</div>
+                <div style="height: 80px; background: var(--graphite); border-radius: var(--radius); position: relative;">
+                  <div style="position: absolute; bottom: 0; width: 100%; height: 72%; background: var(--priority-important); border-radius: var(--radius) var(--radius) 0 0;"></div>
+                </div>
+                <p class="caption text-muted mt-2">50 min</p>
+              </div>
+              <div style="flex: 0 0 60px; text-align: center;">
+                <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--blueprint); margin: 0 auto var(--space-2); display: flex; align-items: center; justify-content: center; color: var(--paper); font-weight: 600;">Thu</div>
+                <div style="height: 80px; background: var(--graphite); border-radius: var(--radius); position: relative;">
+                  <div style="position: absolute; bottom: 0; width: 100%; height: 58%; background: var(--blueprint); border-radius: var(--radius) var(--radius) 0 0;"></div>
+                </div>
+                <p class="caption text-muted mt-2">40 min</p>
+              </div>
+              <div style="flex: 0 0 60px; text-align: center;">
+                <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--priority-standard); margin: 0 auto var(--space-2); display: flex; align-items: center; justify-content: center; color: var(--paper); font-weight: 600;">Fri</div>
+                <div style="height: 80px; background: var(--graphite); border-radius: var(--radius); position: relative;">
+                  <div style="position: absolute; bottom: 0; width: 100%; height: 80%; background: var(--priority-standard); border-radius: var(--radius) var(--radius) 0 0;"></div>
+                </div>
+                <p class="caption text-muted mt-2">55 min</p>
+              </div>
+              <div style="flex: 0 0 60px; text-align: center;">
+                <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--urgent); margin: 0 auto var(--space-2); display: flex; align-items: center; justify-content: center; color: var(--paper); font-weight: 600;">Sat</div>
+                <div style="height: 80px; background: var(--graphite); border-radius: var(--radius); position: relative;">
+                  <div style="position: absolute; bottom: 0; width: 100%; height: 90%; background: var(--urgent); border-radius: var(--radius) var(--radius) 0 0;"></div>
+                </div>
+                <p class="caption text-muted mt-2">62 min</p>
+              </div>
+              <div style="flex: 0 0 60px; text-align: center;">
+                <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--priority-important); margin: 0 auto var(--space-2); display: flex; align-items: center; justify-content: center; color: var(--paper); font-weight: 600;">Sun</div>
+                <div style="height: 80px; background: var(--graphite); border-radius: var(--radius); position: relative;">
+                  <div style="position: absolute; bottom: 0; width: 100%; height: 35%; background: var(--priority-important); border-radius: var(--radius) var(--radius) 0 0;"></div>
+                </div>
+                <p class="caption text-muted mt-2">25 min</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

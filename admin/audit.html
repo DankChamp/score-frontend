@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Score AI Admin Audit - View audit logs.">
+  <title>Admin Audit — Score AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="site-layout">
+  <header class="dashboard-header" role="banner">
+    <div class="container dashboard-header-inner">
+      <a href="dashboard.html" class="brand">SCORE AI <span class="brand-tagline">Admin</span></a>
+      <nav class="dashboard-nav" role="navigation" aria-label="Admin navigation">
+        <a href="dashboard.html" class="dashboard-nav-link">Dashboard</a>
+        <a href="questions.html" class="dashboard-nav-link">Questions</a>
+        <a href="mcqs.html" class="dashboard-nav-link">MCQs</a>
+        <a href="papers.html" class="dashboard-nav-link">Papers</a>
+        <a href="tests.html" class="dashboard-nav-link">Tests</a>
+        <a href="students.html" class="dashboard-nav-link">Students</a>
+        <a href="admins.html" class="dashboard-nav-link">Admins</a>
+        <a href="ai.html" class="dashboard-nav-link">AI</a>
+        <a href="audit.html" class="dashboard-nav-link" aria-current="page">Audit</a>
+      </nav>
+      <button class="btn btn-ghost btn-icon theme-toggle" data-theme-toggle aria-label="Toggle theme">
+        <svg data-theme-icon="sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        <svg data-theme-icon="moon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+      </button>
+      <button class="btn btn-ghost">Logout</button>
+    </div>
+  </header>
+
+  <main class="dashboard-main" role="main">
+    <div class="container">
+      <div class="space-y-6">
+        <div>
+          <h1 class="dashboard-title display-4">Audit Logs</h1>
+          <p class="dashboard-subtitle">View all administrative actions and system events.</p>
+        </div>
+
+        <article class="card">
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>Actor</th>
+                  <th>Action</th>
+                  <th>Resource</th>
+                  <th>Details</th>
+                  <th>IP Address</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="caption">2024-01-15 14:32:18</span></td>
+                  <td>Void</td>
+                  <td>Created</td>
+                  <td>Question</td>
+                  <td>Quadratic Equations (Mathematics)</td>
+                  <td><span class="caption">192.168.1.45</span></td>
+                </tr>
+                <tr>
+                  <td><span class="caption">2024-01-15 13:45:02</span></td>
+                  <td>Codi</td>
+                  <td>Published</td>
+                  <td>Paper</td>
+                  <td>Mathematics Standard — Set 3</td>
+                  <td><span class="caption">192.168.1.45</span></td>
+                </tr>
+                <tr>
+                  <td><span class="caption">2024-01-15 11:20:33</span></td>
+                  <td>Admin User</td>
+                  <td>Updated</td>
+                  <td>Student</td>
+                  <td>STU-2024-0089: Status → Active</td>
+                  <td><span class="caption">192.168.1.78</span></td>
+                </tr>
+                <tr>
+                  <td><span class="caption">2024-01-14 16:12:45</span></td>
+                  <td>Void</td>
+                  <td>Generated</td>
+                  <td>MCQs</td>
+                  <td>15 MCQs for Quadratic Equations</td>
+                  <td><span class="caption">192.168.1.45</span></td>
+                </tr>
+                <tr>
+                  <td><span class="caption">2024-01-14 10:05:12</span></td>
+                  <td>System</td>
+                  <td>Login</td>
+                  <td>Admin</td>
+                  <td>Void logged in</td>
+                  <td><span class="caption">192.168.1.45</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer flex items-center justify-between">
+            <p class="text-sm text-muted">Showing 1 to 5 of 1,247 entries</p>
+            <nav class="flex gap-2" aria-label="Pagination">
+              <button class="btn btn-ghost btn-sm" disabled>Previous</button>
+              <button class="btn btn-primary btn-sm">1</button>
+              <button class="btn btn-ghost btn-sm">2</button>
+              <button class="btn btn-ghost btn-sm">3</button>
+              <button class="btn btn-ghost btn-sm">Next</button>
+            </nav>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>
