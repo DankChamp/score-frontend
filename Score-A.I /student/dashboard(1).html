@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FAFAF8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Score AI Student Dashboard - Your personalized learning dashboard.">
+  <title>Student Dashboard — Score AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="site-layout">
+  <header class="dashboard-header" role="banner">
+    <div class="container dashboard-header-inner">
+      <a href="dashboard.html" class="brand">SCORE AI</a>
+      <nav class="dashboard-nav" role="navigation" aria-label="Student navigation">
+        <a href="dashboard.html" class="dashboard-nav-link" aria-current="page" data-i18n="nav.dashboard">Dashboard</a>
+        <a href="questions.html" class="dashboard-nav-link" data-i18n="nav.questions">Questions</a>
+        <a href="mcqs.html" class="dashboard-nav-link" data-i18n="nav.mcqs">MCQs</a>
+        <a href="tests.html" class="dashboard-nav-link" data-i18n="nav.tests">Tests</a>
+        <a href="progress.html" class="dashboard-nav-link" data-i18n="nav.progress">Progress</a>
+        <a href="bookmarks.html" class="dashboard-nav-link" data-i18n="nav.bookmarks">Bookmarks</a>
+        <a href="codi.html" class="dashboard-nav-link" data-i18n="nav.codi">Codi AI</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <select id="lang-selector" class="field-input" style="width: auto; padding: var(--space-2) var(--space-3); font-size: var(--scale-sm);" aria-label="Select language">
+          <option value="en">English</option>
+          <option value="hinglish">Hinglish</option>
+        </select>
+        <button class="btn btn-ghost btn-icon theme-toggle" data-theme-toggle aria-label="Toggle theme">
+          <svg data-theme-icon="sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg data-theme-icon="moon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+        <button class="btn btn-ghost" data-logout data-i18n="nav.logout">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-main page-entrance" role="main">
+    <div class="container">
+      <div class="space-y-8">
+        <div>
+          <h1 class="dashboard-title display-4" data-i18n="dashboard.welcome">Welcome back, Arjun</h1>
+          <p class="dashboard-subtitle" data-i18n="dashboard.subtitle">Here's your progress overview. Keep going — the boards are coming.</p>
+        </div>
+
+        <div data-stagger class="stat-grid">
+          <article data-reveal class="card stat-card">
+            <p class="stat-label" data-i18n="dashboard.questionsPracticed">Questions Practiced</p>
+            <p class="stat-value" data-counter="127">0</p>
+          </article>
+          <article data-reveal class="card stat-card">
+            <p class="stat-label" data-i18n="dashboard.mcqsSolved">MCQs Solved</p>
+            <p class="stat-value" data-counter="89">0</p>
+          </article>
+          <article data-reveal class="card stat-card">
+            <p class="stat-label" data-i18n="dashboard.testsCompleted">Tests Completed</p>
+            <p class="stat-value" data-counter="8">0</p>
+          </article>
+          <article data-reveal class="card stat-card">
+            <p class="stat-label" data-i18n="dashboard.currentStreak">Current Streak</p>
+            <p class="stat-value">12 days</p>
+          </article>
+        </div>
+
+        <div data-stagger class="dashboard-grid">
+          <article data-reveal class="card">
+            <div class="card-header">
+              <h2 class="card-title" data-i18n="dashboard.continue">Continue Where You Left Off</h2>
+            </div>
+            <div class="card-content space-y-3">
+              <a href="questions.html" class="quick-action">
+                <div class="flex items-center gap-3">
+                  <div style="width: 40px; height: 40px; border-radius: var(--radius); background: color-mix(in srgb, var(--blueprint) 10%, transparent); display: flex; align-items: center; justify-content: center;">
+                    <svg class="quick-action-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                  </div>
+                  <div>
+                    <p class="font-medium" data-i18n="dashboard.hcfPractice">Real Numbers — HCF Practice</p>
+                    <p class="caption text-muted" data-i18n="dashboard.lastPracticed">Last practiced 2 hours ago · 75% complete</p>
+                  </div>
+                </div>
+              </a>
+              <a href="mcqs.html" class="quick-action">
+                <div class="flex items-center gap-3">
+                  <div style="width: 40px; height: 40px; border-radius: var(--radius); background: color-mix(in srgb, var(--urgent) 10%, transparent); display: flex; align-items: center; justify-content: center;">
+                    <svg class="quick-action-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                  </div>
+                  <div>
+                    <p class="font-medium" data-i18n="dashboard.lifeProcesses">Life Processes MCQ Set</p>
+                    <p class="caption text-muted" data-i18n="dashboard.remainingQuestions">3 questions remaining · Priority: 78</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </article>
+
+          <article data-reveal class="card">
+            <div class="card-header">
+              <h2 class="card-title" data-i18n="dashboard.recommended">Recommended for You</h2>
+            </div>
+            <div class="card-content space-y-3">
+              <div class="flex items-center justify-between p-4 border border-graphite rounded-lg hover:border-graphite-hover transition-colors">
+                <div>
+                  <p class="font-medium" data-i18n="dashboard.polynomials">Polynomials — Zeroes & Coefficients</p>
+                  <p class="caption text-muted" data-i18n="dashboard.notStarted">Mathematics · Priority: 85 · Not started</p>
+                </div>
+                <span class="priority-pill priority-pill-high" data-score="85">85</span>
+              </div>
+              <div class="flex items-center justify-between p-4 border border-graphite rounded-lg hover:border-graphite-hover transition-colors">
+                <div>
+                  <p class="font-medium" data-i18n="dashboard.chemicalReactions">Chemical Reactions — Balancing Equations</p>
+                  <p class="caption text-muted" data-i18n="dashboard.notStarted">Science · Priority: 82 · Not started</p>
+                </div>
+                <span class="priority-pill priority-pill-high" data-score="82">82</span>
+              </div>
+              <div class="flex items-center justify-between p-4 border border-graphite rounded-lg hover:border-graphite-hover transition-colors">
+                <div>
+                  <p class="font-medium" data-i18n="dashboard.nationalism">Nationalism in India — Non-Cooperation</p>
+                  <p class="caption text-muted" data-i18n="dashboard.inProgress">Social Science · Priority: 68 · In progress</p>
+                </div>
+                <span class="priority-pill priority-pill-important" data-score="68">68</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div data-stagger class="dashboard-grid">
+          <article data-reveal class="card">
+            <div class="card-header">
+              <h2 class="card-title" data-i18n="dashboard.weeklyProgress">Weekly Progress</h2>
+            </div>
+            <div class="card-content">
+              <div class="space-y-4">
+                <div>
+                  <div class="flex justify-between text-sm mb-2">
+                    <span data-i18n="dashboard.math">Mathematics</span>
+                    <span class="font-medium">65%</span>
+                  </div>
+                  <div class="progress-bar"><div class="progress-bar-fill" style="width: 65%; background: var(--blueprint);"></div></div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-2">
+                    <span data-i18n="dashboard.science">Science</span>
+                    <span class="font-medium">48%</span>
+                  </div>
+                  <div class="progress-bar"><div class="progress-bar-fill" style="width: 48%; background: var(--urgent);"></div></div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-2">
+                    <span data-i18n="dashboard.social">Social Science</span>
+                    <span class="font-medium">32%</span>
+                  </div>
+                  <div class="progress-bar"><div class="progress-bar-fill" style="width: 32%; background: var(--priority-important);"></div></div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm mb-2">
+                    <span data-i18n="dashboard.english">English</span>
+                    <span class="font-medium">71%</span>
+                  </div>
+                  <div class="progress-bar"><div class="progress-bar-fill" style="width: 71%; background: var(--priority-standard);"></div></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article data-reveal class="card">
+            <div class="card-header">
+              <h2 class="card-title" data-i18n="dashboard.upcomingTests">Upcoming Tests</h2>
+            </div>
+            <div class="card-content p-0">
+              <ul class="activity-list">
+                <li data-reveal class="activity-item">
+                  <div class="activity-content">
+                    <p class="activity-title" data-i18n="dashboard.linearEquations">Chapter 3: Pair of Linear Equations</p>
+                    <p class="activity-meta" data-i18n="dashboard.scheduledTomorrow">Mathematics · Scheduled: Tomorrow 10:00 AM</p>
+                  </div>
+                  <span class="badge badge-fill badge-blueprint activity-badge" data-i18n="dashboard.upcoming">Upcoming</span>
+                </li>
+                <li data-reveal class="activity-item">
+                  <div class="activity-content">
+                    <p class="activity-title" data-i18n="dashboard.fullSyllabus">Full Syllabus Mock Test</p>
+                    <p class="activity-meta" data-i18n="dashboard.scheduledNextSunday">All Subjects · Scheduled: Next Sunday</p>
+                  </div>
+                  <span class="badge badge-outline activity-badge" data-i18n="dashboard.scheduled">Scheduled</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

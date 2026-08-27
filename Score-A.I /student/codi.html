@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FAFAF8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Score AI Codi AI - Your AI study companion.">
+  <title>Codi AI — Score AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="site-layout">
+  <header class="dashboard-header" role="banner">
+    <div class="container dashboard-header-inner">
+      <a href="dashboard.html" class="brand">SCORE AI</a>
+      <nav class="dashboard-nav" role="navigation" aria-label="Student navigation">
+        <a href="dashboard.html" class="dashboard-nav-link" data-i18n="nav.dashboard">Dashboard</a>
+        <a href="questions.html" class="dashboard-nav-link" data-i18n="nav.questions">Questions</a>
+        <a href="mcqs.html" class="dashboard-nav-link" data-i18n="nav.mcqs">MCQs</a>
+        <a href="tests.html" class="dashboard-nav-link" data-i18n="nav.tests">Tests</a>
+        <a href="progress.html" class="dashboard-nav-link" data-i18n="nav.progress">Progress</a>
+        <a href="bookmarks.html" class="dashboard-nav-link" data-i18n="nav.bookmarks">Bookmarks</a>
+        <a href="codi.html" class="dashboard-nav-link" aria-current="page" data-i18n="nav.codi">Codi AI</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <select id="lang-selector" class="field-input" style="width: auto; padding: var(--space-2) var(--space-3); font-size: var(--scale-sm);" aria-label="Select language">
+          <option value="en">English</option>
+          <option value="hinglish">Hinglish</option>
+        </select>
+        <button class="btn btn-ghost btn-icon theme-toggle" data-theme-toggle aria-label="Toggle theme">
+          <svg data-theme-icon="sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg data-theme-icon="moon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+        <button class="btn btn-ghost" data-logout data-i18n="nav.logout">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-main page-entrance" role="main">
+    <div class="container">
+      <div class="space-y-8">
+        <div class="text-center" style="max-width: 48rem; margin: 0 auto;">
+          <h1 class="dashboard-title display-4" data-i18n="codi.title">Codi AI</h1>
+          <p class="dashboard-subtitle" data-i18n="codi.subtitle">Your AI study companion. Ask questions, get explanations, generate practice.</p>
+        </div>
+
+        <article data-reveal class="card" style="max-width: 48rem; margin: 0 auto;">
+          <div class="card-content" style="padding: var(--space-8);">
+            <div id="chat-messages" style="min-height: 300px; max-height: 500px; overflow-y: auto; margin-bottom: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4);">
+              <div class="chat-message chat-message-ai">
+                <div class="chat-avatar">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </div>
+                <div class="chat-bubble">
+                  <p class="text-sm" data-i18n="codi.welcome">Hello! I'm Codi, your AI study companion. I can help you with:</p>
+                  <ul style="margin-top: var(--space-3); display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--scale-sm);">
+                    <li data-i18n="codi.feature1">• Explaining concepts step-by-step</li>
+                    <li data-i18n="codi.feature2">• Generating practice questions</li>
+                    <li data-i18n="codi.feature3">• Solving problems with you</li>
+                    <li data-i18n="codi.feature4">• Creating study plans</li>
+                    <li data-i18n="codi.feature5">• Answering doubts instantly</li>
+                  </ul>
+                  <p class="text-sm text-muted mt-3" data-i18n="codi.prompt">What would you like help with today?</p>
+                </div>
+              </div>
+              <div class="chat-message chat-message-user">
+                <div class="chat-bubble">
+                    <p class="text-sm" style="color: var(--paper);" data-i18n="codi.exampleQuestion">Can you explain how to find HCF using Euclid's algorithm?</p>
+                  </div>
+                <p class="chat-timestamp" data-i18n="codi.justNow">Just now</p>
+              </div>
+              <div class="chat-message chat-message-ai">
+                <div class="chat-avatar">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </div>
+                <div class="chat-bubble">
+                  <p class="text-sm text-ink" data-i18n="codi.exampleAnswer">Euclid's division algorithm finds the HCF of two numbers by repeatedly applying the division lemma:</p>
+                  <ol style="margin-top: var(--space-3); padding-left: var(--space-5); display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--scale-sm);">
+                    <li data-i18n="codi.step1">Divide the larger number by the smaller</li>
+                    <li data-i18n="codi.step2">If remainder is 0, the divisor is the HCF</li>
+                    <li data-i18n="codi.step3">If remainder ≠ 0, divide the previous divisor by the remainder</li>
+                    <li data-i18n="codi.step4">Repeat until remainder is 0</li>
+                  </ol>
+                  <p class="text-sm text-muted mt-3" data-i18n="codi.exampleResult">For 135 and 225:<br>225 = 135 × 1 + 90<br>135 = 90 × 1 + 45<br>90 = 45 × 2 + 0<br>HCF = 45</p>
+                </div>
+              </div>
+            </div>
+
+            <form id="chat-form" class="flex gap-3" style="position: relative;">
+              <div style="flex: 1; position: relative;">
+                <input type="text" id="chat-input" class="field-input" placeholder="Ask Codi anything..." style="padding-right: 48px;" data-i18n-placeholder="codi.inputPlaceholder">
+                <button type="submit" class="btn btn-primary btn-icon" style="position: absolute; right: 4px; top: 50%; transform: translateY(-50%);" aria-label="Send message">
+                  <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                </button>
+              </div>
+            </form>
+          </div>
+        </article>
+
+        <div data-stagger class="card-grid" style="max-width: 48rem; margin: 0 auto;">
+          <article data-reveal class="card">
+            <div class="card-content">
+              <h3 class="card-title" data-i18n="codi.quickActions">Quick Actions</h3>
+              <div class="flex flex-col gap-3 mt-4">
+                <button class="btn btn-secondary w-full justify-start" data-i18n="codi.action1">Generate Practice Questions</button>
+                <button class="btn btn-secondary w-full justify-start" data-i18n="codi.action2">Create Study Plan</button>
+                <button class="btn btn-secondary w-full justify-start" data-i18n="codi.action3">Explain a Concept</button>
+                <button class="btn btn-secondary w-full justify-start" data-i18n="codi.action4">Review My Mistakes</button>
+              </div>
+            </div>
+          </article>
+          <article data-reveal class="card">
+            <div class="card-content">
+              <h3 class="card-title" data-i18n="codi.recentConversations">Recent Conversations</h3>
+              <ul class="space-y-3 mt-4">
+                <li class="p-3 border border-graphite rounded-lg hover:border-graphite-hover transition-colors cursor-pointer">
+                  <p class="font-medium" data-i18n="codi.convo1">Euclid's Division Algorithm</p>
+                  <p class="caption text-muted mt-1" data-i18n="codi.convo1meta">Mathematics · 2 hours ago</p>
+                </li>
+                <li class="p-3 border border-graphite rounded-lg hover:border-graphite-hover transition-colors cursor-pointer">
+                  <p class="font-medium" data-i18n="codi.convo2">Balancing Chemical Equations</p>
+                  <p class="caption text-muted mt-1" data-i18n="codi.convo2meta">Science · Yesterday</p>
+                </li>
+                <li class="p-3 border border-graphite rounded-lg hover:border-graphite-hover transition-colors cursor-pointer">
+                  <p class="font-medium" data-i18n="codi.convo3">Non-Cooperation Movement Causes</p>
+                  <p class="caption text-muted mt-1" data-i18n="codi.convo3meta">Social Science · 2 days ago</p>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

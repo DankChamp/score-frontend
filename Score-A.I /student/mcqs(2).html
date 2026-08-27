@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FAFAF8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Score AI Student MCQs - Practice multiple choice questions.">
+  <title>Student MCQs — Score AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="site-layout">
+  <header class="dashboard-header" role="banner">
+    <div class="container dashboard-header-inner">
+      <a href="dashboard.html" class="brand">SCORE AI</a>
+      <nav class="dashboard-nav" role="navigation" aria-label="Student navigation">
+        <a href="dashboard.html" class="dashboard-nav-link" data-i18n="nav.dashboard">Dashboard</a>
+        <a href="questions.html" class="dashboard-nav-link" data-i18n="nav.questions">Questions</a>
+        <a href="mcqs.html" class="dashboard-nav-link" aria-current="page" data-i18n="nav.mcqs">MCQs</a>
+        <a href="tests.html" class="dashboard-nav-link" data-i18n="nav.tests">Tests</a>
+        <a href="progress.html" class="dashboard-nav-link" data-i18n="nav.progress">Progress</a>
+        <a href="bookmarks.html" class="dashboard-nav-link" data-i18n="nav.bookmarks">Bookmarks</a>
+        <a href="codi.html" class="dashboard-nav-link" data-i18n="nav.codi">Codi AI</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <select id="lang-selector" class="field-input" style="width: auto; padding: var(--space-2) var(--space-3); font-size: var(--scale-sm);" aria-label="Select language">
+          <option value="en">English</option>
+          <option value="hinglish">Hinglish</option>
+        </select>
+        <button class="btn btn-ghost btn-icon theme-toggle" data-theme-toggle aria-label="Toggle theme">
+          <svg data-theme-icon="sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg data-theme-icon="moon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+        <button class="btn btn-ghost" data-logout data-i18n="nav.logout">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-main page-entrance" role="main">
+    <div class="container">
+      <div class="space-y-6">
+        <div>
+          <h1 class="dashboard-title display-4" data-i18n="mcqs.title">MCQs</h1>
+          <p class="dashboard-subtitle" data-i18n="mcqs.subtitle">Test your knowledge with multiple choice questions.</p>
+        </div>
+
+        <div data-stagger class="card-grid" style="grid-template-columns: 1fr;">
+          <article data-reveal class="card mcq-card" data-mcq-card>
+            <div class="mcq-header">
+              <span class="badge badge-outline" data-i18n="subjects.science">Science</span>
+              <span class="badge badge-fill badge-graphite" data-i18n="chapters.lifeProcesses">Life Processes</span>
+              <span class="priority-pill priority-pill-high" data-score="78">78</span>
+            </div>
+            <p class="mcq-question">Which of the following is NOT a function of the human circulatory system?</p>
+            <div class="mcq-options" role="group" aria-label="MCQ options">
+              <label class="mcq-option"><input type="radio" name="mcq-circulatory" value="o2" class="sr-only" data-i18n="options.transportOxygen">Transport of oxygen</label>
+              <label class="mcq-option"><input type="radio" name="mcq-circulatory" value="hormones" class="sr-only" data-i18n="options.transportHormones">Transport of hormones</label>
+              <label class="mcq-option"><input type="radio" name="mcq-circulatory" value="urine" class="sr-only" data-i18n="options.productionUrine">Production of urine</label>
+              <label class="mcq-option"><input type="radio" name="mcq-circulatory" value="nutrients" class="sr-only" data-i18n="options.transportNutrients">Transport of nutrients</label>
+            </div>
+            <div class="mcq-meta">
+              <span data-i18n="common.medium">Medium</span>
+              <span data-i18n="mcq.priority">Priority: 78/100</span>
+            </div>
+          </article>
+          <article data-reveal class="card mcq-card" data-mcq-card>
+            <div class="mcq-header">
+              <span class="badge badge-outline" data-i18n="subjects.math">Mathematics</span>
+              <span class="badge badge-fill badge-graphite" data-i18n="chapters.polynomials">Polynomials</span>
+              <span class="priority-pill priority-pill-high" data-score="85">85</span>
+            </div>
+            <p class="mcq-question">If one zero of the polynomial 3x² - 8x + k is the reciprocal of the other, then k = ?</p>
+            <div class="mcq-options" role="group" aria-label="MCQ options">
+              <label class="mcq-option"><input type="radio" name="mcq-poly" value="3" class="sr-only">3</label>
+              <label class="mcq-option"><input type="radio" name="mcq-poly" value="1/3" class="sr-only">1/3</label>
+              <label class="mcq-option"><input type="radio" name="mcq-poly" value="-3" class="sr-only">-3</label>
+              <label class="mcq-option"><input type="radio" name="mcq-poly" value="-1/3" class="sr-only">-1/3</label>
+            </div>
+            <div class="mcq-meta">
+              <span data-i18n="common.hard">Hard</span>
+              <span data-i18n="mcq.priority">Priority: 85/100</span>
+            </div>
+          </article>
+          <article data-reveal class="card mcq-card" data-mcq-card>
+            <div class="mcq-header">
+              <span class="badge badge-outline" data-i18n="subjects.social">Social Science</span>
+              <span class="badge badge-fill badge-graphite" data-i18n="chapters.development">Development</span>
+              <span class="priority-pill priority-pill-important" data-score="65">65</span>
+            </div>
+            <p class="mcq-question">Which of the following is the most appropriate indicator of economic development?</p>
+            <div class="mcq-options" role="group" aria-label="MCQ options">
+              <label class="mcq-option"><input type="radio" name="mcq-dev" value="gdp" class="sr-only" data-i18n="options.gdpGrowth">GDP growth</label>
+              <label class="mcq-option"><input type="radio" name="mcq-dev" value="literacy" class="sr-only" data-i18n="options.literacyRate">Literacy rate</label>
+              <label class="mcq-option"><input type="radio" name="mcq-dev" value="percapita" class="sr-only" data-i18n="options.perCapitaIncome">Per capita income</label>
+              <label class="mcq-option"><input type="radio" name="mcq-dev" value="lifeexp" class="sr-only" data-i18n="options.lifeExpectancy">Life expectancy</label>
+            </div>
+            <div class="mcq-meta">
+              <span data-i18n="common.easy">Easy</span>
+              <span data-i18n="mcq.priority">Priority: 65/100</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

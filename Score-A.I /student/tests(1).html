@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FAFAF8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Score AI Student Tests - Take tests and assessments.">
+  <title>Student Tests — Score AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="site-layout">
+  <header class="dashboard-header" role="banner">
+    <div class="container dashboard-header-inner">
+      <a href="dashboard.html" class="brand">SCORE AI</a>
+      <nav class="dashboard-nav" role="navigation" aria-label="Student navigation">
+        <a href="dashboard.html" class="dashboard-nav-link" data-i18n="nav.dashboard">Dashboard</a>
+        <a href="questions.html" class="dashboard-nav-link" data-i18n="nav.questions">Questions</a>
+        <a href="mcqs.html" class="dashboard-nav-link" data-i18n="nav.mcqs">MCQs</a>
+        <a href="tests.html" class="dashboard-nav-link" aria-current="page" data-i18n="nav.tests">Tests</a>
+        <a href="progress.html" class="dashboard-nav-link" data-i18n="nav.progress">Progress</a>
+        <a href="bookmarks.html" class="dashboard-nav-link" data-i18n="nav.bookmarks">Bookmarks</a>
+        <a href="codi.html" class="dashboard-nav-link" data-i18n="nav.codi">Codi AI</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <select id="lang-selector" class="field-input" style="width: auto; padding: var(--space-2) var(--space-3); font-size: var(--scale-sm);" aria-label="Select language">
+          <option value="en">English</option>
+          <option value="hinglish">Hinglish</option>
+        </select>
+        <button class="btn btn-ghost btn-icon theme-toggle" data-theme-toggle aria-label="Toggle theme">
+          <svg data-theme-icon="sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg data-theme-icon="moon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+        <button class="btn btn-ghost" data-logout data-i18n="nav.logout">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-main page-entrance" role="main">
+    <div class="container">
+      <div class="space-y-6">
+        <div>
+          <h1 class="dashboard-title display-4" data-i18n="tests.title">Tests</h1>
+          <p class="dashboard-subtitle" data-i18n="tests.subtitle">Take tests and assessments to measure your preparation.</p>
+        </div>
+
+        <div data-stagger class="card-grid" style="grid-template-columns: 1fr;">
+          <article data-reveal class="card">
+            <div class="card-content">
+              <div class="flex items-start justify-between gap-4 mb-4">
+                <div>
+                  <h3 class="card-title" data-i18n="tests.realNumbers">Chapter 1: Real Numbers</h3>
+                  <p class="caption text-muted mt-1" data-i18n="tests.realNumbersDesc">Mathematics · 15 questions · 30 minutes</p>
+                </div>
+                <span class="badge badge-fill badge-blueprint" data-i18n="common.available">Available</span>
+              </div>
+              <div class="flex items-center gap-4 text-sm text-muted mb-4">
+                <span data-i18n="tests.attempts">Attempts: 3</span>
+                <span data-i18n="tests.bestScore">Best Score: 87%</span>
+                <span data-i18n="tests.lastAttempt">Last Attempt: 2 days ago</span>
+              </div>
+              <a href="#" class="btn btn-primary w-full sm:w-auto" data-i18n="common.takeTest">Take Test</a>
+            </div>
+          </article>
+          <article data-reveal class="card">
+            <div class="card-content">
+              <div class="flex items-start justify-between gap-4 mb-4">
+                <div>
+                  <h3 class="card-title" data-i18n="tests.polynomials">Chapter 2: Polynomials</h3>
+                  <p class="caption text-muted mt-1" data-i18n="tests.polynomialsDesc">Mathematics · 12 questions · 25 minutes</p>
+                </div>
+                <span class="badge badge-fill badge-blueprint" data-i18n="common.available">Available</span>
+              </div>
+              <div class="flex items-center gap-4 text-sm text-muted mb-4">
+                <span data-i18n="tests.attempts">Attempts: 2</span>
+                <span data-i18n="tests.bestScore">Best Score: 75%</span>
+                <span data-i18n="tests.lastAttempt">Last Attempt: 5 days ago</span>
+              </div>
+              <a href="#" class="btn btn-primary w-full sm:w-auto" data-i18n="common.takeTest">Take Test</a>
+            </div>
+          </article>
+          <article data-reveal class="card">
+            <div class="card-content">
+              <div class="flex items-start justify-between gap-4 mb-4">
+                <div>
+                  <h3 class="card-title" data-i18n="tests.lifeProcesses">Life Processes - Full Chapter</h3>
+                  <p class="caption text-muted mt-1" data-i18n="tests.lifeProcessesDesc">Science · 20 questions · 40 minutes</p>
+                </div>
+                <span class="badge badge-outline" data-i18n="common.locked">Locked</span>
+              </div>
+              <p class="text-sm text-muted mb-4" data-i18n="tests.lockedMessage">Complete Chapter 1 & 2 practice to unlock</p>
+              <button class="btn btn-ghost w-full sm:w-auto" disabled data-i18n="common.locked">Locked</button>
+            </div>
+          </article>
+        </div>
+
+        <section class="section-tight" style="margin-top: var(--space-8);">
+          <h2 class="heading-2 mb-6" data-i18n="tests.history">Test History</h2>
+          <article data-reveal class="card">
+            <div class="table-wrap">
+              <table class="table" data-table-stagger>
+                <thead>
+                  <tr>
+                    <th data-i18n="tests.table.test">Test</th>
+                    <th data-i18n="tests.table.subject">Subject</th>
+                    <th data-i18n="tests.table.date">Date</th>
+                    <th data-i18n="tests.table.score">Score</th>
+                    <th data-i18n="tests.table.time">Time Taken</th>
+                    <th data-i18n="tests.table.actions">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-i18n="tests.realNumbersTest">Real Numbers - Chapter Test</td>
+                    <td data-i18n="subjects.math">Mathematics</td>
+                    <td><span class="caption">2024-01-13</span></td>
+                    <td><span class="badge badge-fill badge-blueprint">87%</span></td>
+                    <td>22 min</td>
+                    <td><a href="#" class="btn btn-ghost btn-sm" data-i18n="common.review">Review</a></td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="tests.polynomialsTest">Polynomials - Chapter Test</td>
+                    <td data-i18n="subjects.math">Mathematics</td>
+                    <td><span class="caption">2024-01-10</span></td>
+                    <td><span class="badge badge-fill badge-urgent">75%</span></td>
+                    <td>18 min</td>
+                    <td><a href="#" class="btn btn-ghost btn-sm" data-i18n="common.review">Review</a></td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="tests.realNumbersTest">Real Numbers - Chapter Test</td>
+                    <td data-i18n="subjects.math">Mathematics</td>
+                    <td><span class="caption">2024-01-08</span></td>
+                    <td><span class="badge badge-fill badge-graphite">68%</span></td>
+                    <td>25 min</td>
+                    <td><a href="#" class="btn btn-ghost btn-sm" data-i18n="common.review">Review</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

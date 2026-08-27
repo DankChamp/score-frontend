@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FAFAF8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Score AI Student Progress - Track your study progress.">
+  <title>Student Progress — Score AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="site-layout">
+  <header class="dashboard-header" role="banner">
+    <div class="container dashboard-header-inner">
+      <a href="dashboard.html" class="brand">SCORE AI</a>
+      <nav class="dashboard-nav" role="navigation" aria-label="Student navigation">
+        <a href="dashboard.html" class="dashboard-nav-link" data-i18n="nav.dashboard">Dashboard</a>
+        <a href="questions.html" class="dashboard-nav-link" data-i18n="nav.questions">Questions</a>
+        <a href="mcqs.html" class="dashboard-nav-link" data-i18n="nav.mcqs">MCQs</a>
+        <a href="tests.html" class="dashboard-nav-link" data-i18n="nav.tests">Tests</a>
+        <a href="progress.html" class="dashboard-nav-link" aria-current="page" data-i18n="nav.progress">Progress</a>
+        <a href="bookmarks.html" class="dashboard-nav-link" data-i18n="nav.bookmarks">Bookmarks</a>
+        <a href="codi.html" class="dashboard-nav-link" data-i18n="nav.codi">Codi AI</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <select id="lang-selector" class="field-input" style="width: auto; padding: var(--space-2) var(--space-3); font-size: var(--scale-sm);" aria-label="Select language">
+          <option value="en">English</option>
+          <option value="hinglish">Hinglish</option>
+        </select>
+        <button class="btn btn-ghost btn-icon theme-toggle" data-theme-toggle aria-label="Toggle theme">
+          <svg data-theme-icon="sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg data-theme-icon="moon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+        <button class="btn btn-ghost" data-logout data-i18n="nav.logout">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-main page-entrance" role="main">
+    <div class="container">
+      <div class="space-y-6">
+        <div>
+          <h1 class="dashboard-title display-4" data-i18n="progress.title">Your Progress</h1>
+          <p class="dashboard-subtitle" data-i18n="progress.subtitle">Track your performance across all subjects.</p>
+        </div>
+
+        <div data-stagger class="stat-grid">
+          <article data-reveal class="card stat-card">
+            <p class="stat-label" data-i18n="progress.overallProgress">Overall Progress</p>
+            <p class="stat-value" data-counter="54">0%</p>
+          </article>
+          <article data-reveal class="card stat-card">
+            <p class="stat-label" data-i18n="progress.questionsCompleted">Questions Completed</p>
+            <p class="stat-value" data-counter="216">0</p>
+          </article>
+          <article data-reveal class="card stat-card">
+            <p class="stat-label" data-i18n="progress.averageScore">Average Score</p>
+            <p class="stat-value">72%</p>
+          </article>
+          <article data-reveal class="card stat-card">
+            <p class="stat-label" data-i18n="progress.daysActive">Days Active</p>
+            <p class="stat-value" data-counter="18">0</p>
+          </article>
+        </div>
+
+        <article data-reveal class="card">
+          <div class="card-header">
+            <h2 class="card-title" data-i18n="progress.subjectProgress">Subject-wise Progress</h2>
+          </div>
+          <div class="card-content">
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between text-sm mb-2">
+                  <span data-i18n="subjects.math">Mathematics</span>
+                  <span class="font-medium">65%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-bar-fill" style="width: 65%; background: var(--blueprint);"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-2">
+                  <span data-i18n="subjects.science">Science</span>
+                  <span class="font-medium">48%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-bar-fill" style="width: 48%; background: var(--urgent);"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-2">
+                  <span data-i18n="subjects.social">Social Science</span>
+                  <span class="font-medium">32%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-bar-fill" style="width: 32%; background: var(--priority-important);"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-2">
+                  <span data-i18n="subjects.english">English</span>
+                  <span class="font-medium">71%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-bar-fill" style="width: 71%; background: var(--priority-standard);"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-2">
+                  <span data-i18n="subjects.hindi">Hindi</span>
+                  <span class="font-medium">45%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-bar-fill" style="width: 45%; background: var(--priority-veryhigh);"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-2">
+                  <span data-i18n="subjects.it">Information Technology</span>
+                  <span class="font-medium">80%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-bar-fill" style="width: 80%; background: var(--priority-extreme);"></div></div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>
