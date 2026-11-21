@@ -3,6 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FAF9F6">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    document.documentElement.classList.add('js');
+    (function () {
+      try {
+        var stored = localStorage.getItem('score-ai-theme');
+        var dark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) {
+          document.documentElement.classList.add('dark');
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', '#0B0B0A');
+        }
+      } catch (error) {}
+    })();
+  </script>
   <meta name="description" content="Score AI Questions - Browse and practice standard questions for CBSE Class 10.">
   <title>Questions — Score AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,7 +68,7 @@
           <h1 id="questions-title" class="section-title display-4">Questions</h1>
           <p class="section-lead">Browse and practice standard questions. Each question shows type, difficulty, and priority score.</p>
         </div>
-        <div class="card-grid" style="grid-template-columns: 1fr;">
+        <div class="card-grid card-grid-single">
           <article class="card question-card" data-mcq-card>
             <div class="question-header">
               <span class="badge badge-outline">Mathematics</span>

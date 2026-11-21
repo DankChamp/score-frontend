@@ -3,6 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FAF9F6">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    document.documentElement.classList.add('js');
+    (function () {
+      try {
+        var stored = localStorage.getItem('score-ai-theme');
+        var dark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) {
+          document.documentElement.classList.add('dark');
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', '#0B0B0A');
+        }
+      } catch (error) {}
+    })();
+  </script>
   <meta name="description" content="Score AI Student Login - Access your personalized dashboard.">
   <title>Login — Score AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +35,7 @@
       </button>
     </div>
   </header>
-  <article class="auth-card card">
+  <main class="auth-card card">
     <header class="auth-header">
       <h1 class="auth-title">Student Login</h1>
       <p class="auth-subtitle">Score AI</p>
@@ -39,7 +55,7 @@
       <p>Don't have an account?</p>
       <p>Contact Void or Codi to create your student account.</p>
     </div>
-  </article>
+  </main>
 
   <script src="assets/js/app.js"></script>
 </body>

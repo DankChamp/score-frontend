@@ -3,6 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FAF9F6">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    document.documentElement.classList.add('js');
+    (function () {
+      try {
+        var stored = localStorage.getItem('score-ai-theme');
+        var dark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) {
+          document.documentElement.classList.add('dark');
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', '#0B0B0A');
+        }
+      } catch (error) {}
+    })();
+  </script>
   <meta name="description" content="Score AI Student Bookmarks - Your saved questions and resources.">
   <title>Student Bookmarks — Score AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,8 +55,8 @@
             <h1 class="dashboard-title display-4">Bookmarks</h1>
             <p class="dashboard-subtitle">Your saved questions, MCQs, and resources for quick access.</p>
           </div>
-          <div class="flex gap-3">
-            <select class="field-input" style="width: auto; min-width: 160px;">
+          <div class="filter-row">
+            <select class="field-input filter-select" style="min-width: 160px;" aria-label="Filter by type">
               <option value="">All Types</option>
               <option value="question">Questions</option>
               <option value="mcq">MCQs</option>
@@ -49,7 +65,7 @@
           </div>
         </div>
 
-        <div class="card-grid" style="grid-template-columns: 1fr;">
+        <div class="card-grid card-grid-single">
           <article class="card question-card" data-mcq-card>
             <div class="question-header">
               <span class="badge badge-outline">Mathematics</span>
@@ -112,7 +128,7 @@
           <article class="card paper-card">
             <div class="paper-header">
               <div>
-                <h3 class="paper-title">Mathematics Standard — Set 2</h3>
+                <h2 class="paper-title">Mathematics Standard — Set 2</h2>
                 <p class="paper-meta">Mathematics · 2027 · 80 marks · 180 min</p>
               </div>
               <span class="badge badge-outline paper-badge">Protected</span>
@@ -125,7 +141,7 @@
 
         <div class="text-center py-12" style="border: 1px dashed var(--graphite); border-radius: var(--radius);">
           <svg style="width: 48px; height: 48px; margin: 0 auto var(--space-4); color: var(--graphite);" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/></svg>
-          <h3 class="heading-3 mb-2">No more bookmarks</h3>
+          <h2 class="heading-3 mb-2">No more bookmarks</h2>
           <p class="text-muted mb-4">Start practicing and bookmark questions you want to revisit.</p>
           <a href="questions.html" class="btn btn-primary">Explore Questions</a>
         </div>

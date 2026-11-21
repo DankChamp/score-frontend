@@ -3,6 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FAF9F6">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    document.documentElement.classList.add('js');
+    (function () {
+      try {
+        var stored = localStorage.getItem('score-ai-theme');
+        var dark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) {
+          document.documentElement.classList.add('dark');
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', '#0B0B0A');
+        }
+      } catch (error) {}
+    })();
+  </script>
   <meta name="description" content="Score AI Admin Papers - Manage sample papers.">
   <title>Admin Papers — Score AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,7 +26,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
-<body class="site-layout">
+<body class="site-layout" data-paper-base="../">
   <header class="dashboard-header" role="banner">
     <div class="container dashboard-header-inner">
       <a href="dashboard.html" class="brand">SCORE AI <span class="brand-tagline">Admin</span></a>
@@ -41,50 +57,68 @@
             <h1 class="dashboard-title display-4">Sample Papers</h1>
             <p class="dashboard-subtitle">Manage sample papers for practice.</p>
           </div>
-          <button class="btn btn-primary">Upload Paper</button>
+          <div class="paper-admin-actions">
+            <a href="../papers.html" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Public Page</a>
+            <button type="button" class="btn btn-primary" data-paper-add aria-haspopup="dialog" aria-controls="paper-dialog">Upload Paper</button>
+          </div>
         </div>
 
         <article class="card">
           <div class="table-wrap">
-            <table class="table">
+            <table class="table paper-table">
+              <caption class="sr-only">Sample paper library</caption>
               <thead>
                 <tr>
-                  <th>Title</th>
-                  <th>Subject</th>
-                  <th>Year</th>
-                  <th>Marks</th>
-                  <th>Duration</th>
-                  <th>Status</th>
-                  <th>Actions</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Subject</th>
+                  <th scope="col">Year</th>
+                  <th scope="col">Marks</th>
+                  <th scope="col">Duration</th>
+                  <th scope="col">Access</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Actions</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>Mathematics Standard — Set 1</td>
+              <tbody data-admin-paper-rows>
+                <tr data-paper-id="math-standard-launch">
+                  <td><span class="paper-table-title">Mathematics Standard — Launch Paper</span></td>
                   <td>Mathematics</td>
                   <td>2027</td>
                   <td>80</td>
                   <td>180 min</td>
-                  <td><span class="badge badge-fill badge-blueprint">Published</span></td>
-                  <td><div class="table-actions"><button class="btn btn-ghost btn-sm table-action-btn table-action-btn-ghost">Edit</button><button class="btn btn-ghost btn-sm table-action-btn table-action-btn-danger">Delete</button></div></td>
+                  <td><span class="badge badge-fill badge-blueprint">Free</span></td>
+                  <td><span class="paper-status paper-status-live">Published</span></td>
+                  <td><div class="table-actions"><a href="../assets/papers/mathematics-standard-launch-paper.pdf" class="btn btn-ghost btn-sm table-action-btn table-action-btn-ghost" target="_blank" rel="noopener noreferrer" aria-label="View PDF: Mathematics Standard — Launch Paper">View</a><button type="button" class="btn btn-ghost btn-sm table-action-btn table-action-btn-ghost">Edit</button><button type="button" class="btn btn-ghost btn-sm table-action-btn table-action-btn-danger">Delete</button></div></td>
                 </tr>
-                <tr>
-                  <td>Science — Set 1</td>
+                <tr data-paper-id="math-standard-set-1">
+                  <td><span class="paper-table-title">Mathematics Standard — Set 1</span></td>
+                  <td>Mathematics</td>
+                  <td>2027</td>
+                  <td>80</td>
+                  <td>180 min</td>
+                  <td><span class="badge badge-fill badge-blueprint">Free</span></td>
+                  <td><span class="paper-status paper-status-live">Published</span></td>
+                  <td><div class="table-actions"><button type="button" class="btn btn-ghost btn-sm table-action-btn table-action-btn-ghost">Edit</button><button type="button" class="btn btn-ghost btn-sm table-action-btn table-action-btn-danger">Delete</button></div></td>
+                </tr>
+                <tr data-paper-id="science-set-1">
+                  <td><span class="paper-table-title">Science — Set 1</span></td>
                   <td>Science</td>
                   <td>2027</td>
                   <td>80</td>
                   <td>180 min</td>
-                  <td><span class="badge badge-fill badge-blueprint">Published</span></td>
-                  <td><div class="table-actions"><button class="btn btn-ghost btn-sm table-action-btn table-action-btn-ghost">Edit</button><button class="btn btn-ghost btn-sm table-action-btn table-action-btn-danger">Delete</button></div></td>
+                  <td><span class="badge badge-fill badge-blueprint">Free</span></td>
+                  <td><span class="paper-status paper-status-live">Published</span></td>
+                  <td><div class="table-actions"><button type="button" class="btn btn-ghost btn-sm table-action-btn table-action-btn-ghost">Edit</button><button type="button" class="btn btn-ghost btn-sm table-action-btn table-action-btn-danger">Delete</button></div></td>
                 </tr>
-                <tr>
-                  <td>Mathematics Standard — Set 2</td>
+                <tr data-paper-id="math-standard-set-2">
+                  <td><span class="paper-table-title">Mathematics Standard — Set 2</span></td>
                   <td>Mathematics</td>
                   <td>2027</td>
                   <td>80</td>
                   <td>180 min</td>
-                  <td><span class="badge badge-outline">Protected</span></td>
-                  <td><div class="table-actions"><button class="btn btn-ghost btn-sm table-action-btn table-action-btn-ghost">Edit</button><button class="btn btn-ghost btn-sm table-action-btn table-action-btn-danger">Delete</button></div></td>
+                  <td><span class="badge badge-outline">Paid</span></td>
+                  <td><span class="paper-status paper-status-live">Published</span></td>
+                  <td><div class="table-actions"><button type="button" class="btn btn-ghost btn-sm table-action-btn table-action-btn-ghost">Edit</button><button type="button" class="btn btn-ghost btn-sm table-action-btn table-action-btn-danger">Delete</button></div></td>
                 </tr>
               </tbody>
             </table>
@@ -94,6 +128,98 @@
     </div>
   </main>
 
+  <dialog class="paper-dialog" id="paper-dialog" data-paper-dialog aria-labelledby="paper-dialog-title" aria-describedby="paper-dialog-description">
+    <form class="paper-dialog-form" data-paper-form autocomplete="off">
+      <div class="paper-dialog-header">
+        <div>
+          <span class="section-eyebrow">Paper library</span>
+          <h2 class="paper-dialog-title" id="paper-dialog-title" data-paper-dialog-title>Upload Paper</h2>
+          <p class="paper-dialog-lead" id="paper-dialog-description" data-paper-dialog-lead>Add a paper to the public library. Paid papers are the default.</p>
+        </div>
+        <button type="button" class="paper-dialog-close" data-paper-close aria-label="Close upload dialog">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+
+      <div class="paper-dialog-body">
+        <input type="hidden" name="paperId" data-paper-input-id>
+
+        <div class="paper-form-grid">
+          <div class="field-group paper-form-span-2">
+            <label class="field-label" for="paper-title">Paper title</label>
+            <input class="field-input" id="paper-title" name="title" type="text" required maxlength="140" placeholder="Mathematics Standard — Set 3" data-paper-title>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="paper-subject">Subject</label>
+            <input class="field-input" id="paper-subject" name="subject" type="text" required maxlength="60" list="paper-subject-options" placeholder="Mathematics" data-paper-subject>
+            <datalist id="paper-subject-options">
+              <option value="Mathematics"></option>
+              <option value="Science"></option>
+              <option value="Social Science"></option>
+              <option value="English"></option>
+              <option value="Hindi"></option>
+              <option value="Information Technology"></option>
+            </datalist>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="paper-year">Year</label>
+            <input class="field-input" id="paper-year" name="year" type="number" required min="2000" max="2100" step="1" value="2027" data-paper-year>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="paper-marks">Marks</label>
+            <input class="field-input" id="paper-marks" name="marks" type="number" required min="1" max="200" step="1" value="80" data-paper-marks>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="paper-duration">Duration (minutes)</label>
+            <input class="field-input" id="paper-duration" name="duration" type="number" required min="1" max="600" step="1" value="180" data-paper-duration>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="paper-access">Access</label>
+            <select class="field-input" id="paper-access" name="access" data-paper-access>
+              <option value="paid" selected>Paid students — login required</option>
+              <option value="free">Free — open to everyone</option>
+            </select>
+            <p class="field-help">Paid is the default. Free papers open directly from the public page.</p>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="paper-published">Status</label>
+            <label class="checkbox-field" for="paper-published">
+              <input type="checkbox" id="paper-published" name="published" checked data-paper-published>
+              <span>Publish immediately</span>
+            </label>
+            <p class="field-help">Published papers appear on the public Papers page.</p>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="paper-file">PDF file</label>
+            <input class="field-file" id="paper-file" name="pdfFile" type="file" accept="application/pdf,.pdf" data-paper-file>
+            <p class="field-help" data-paper-file-help>Required for new papers unless a PDF link is added. Up to 2 MB.</p>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="paper-url">PDF link <span class="field-optional">(optional)</span></label>
+            <input class="field-input" id="paper-url" name="pdfUrl" type="text" placeholder="https://… or assets/papers/paper.pdf" data-paper-url>
+            <p class="field-help">Use a full https:// link or a path from the site root.</p>
+          </div>
+        </div>
+
+        <p class="form-error" data-paper-error role="alert" tabindex="-1" hidden></p>
+      </div>
+
+      <div class="paper-dialog-footer">
+        <button type="button" class="btn btn-secondary" data-paper-close>Cancel</button>
+        <button type="submit" class="btn btn-primary" data-paper-submit>Publish Paper</button>
+      </div>
+    </form>
+  </dialog>
+
   <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/papers.js"></script>
 </body>
 </html>

@@ -3,6 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FAF9F6">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    document.documentElement.classList.add('js');
+    (function () {
+      try {
+        var stored = localStorage.getItem('score-ai-theme');
+        var dark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) {
+          document.documentElement.classList.add('dark');
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', '#0B0B0A');
+        }
+      } catch (error) {}
+    })();
+  </script>
   <meta name="description" content="Score AI Sample Papers - Practice with sample papers designed for the 2027 boards.">
   <title>Sample Papers — Score AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,7 +26,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body class="site-layout">
+<body class="site-layout" data-paper-base="">
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a href="index.html" class="brand" aria-label="Score AI Home">SCORE AI</a>
@@ -48,42 +64,55 @@
     <section class="section" aria-labelledby="papers-title">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow">3 Papers Available</span>
+          <span class="section-eyebrow" data-paper-count>4 Papers Available</span>
           <h1 id="papers-title" class="section-title display-4">Sample Papers</h1>
-          <p class="section-lead">Practice with sample papers designed for the 2027 boards. Protected papers require student login.</p>
+          <p class="section-lead">Practice with sample papers designed for the 2027 boards. Paid papers require student login.</p>
         </div>
-        <div class="card-grid" style="grid-template-columns: 1fr; max-width: 48rem; margin: 0 auto;">
-          <article class="card paper-card">
+        <div class="card-grid papers-stack" data-paper-list data-paper-heading="h2">
+          <article class="card paper-card paper-card-launch" data-paper-id="math-standard-launch" data-paper-access="free">
             <div class="paper-header">
               <div>
-                <h3 class="paper-title">Mathematics Standard — Set 1</h3>
+                <h2 class="paper-title">Mathematics Standard — Launch Paper</h2>
                 <p class="paper-meta">Mathematics · 2027 · 80 marks · 180 min</p>
               </div>
-              <span class="badge badge-fill badge-blueprint paper-badge">Open</span>
+              <span class="badge badge-fill badge-blueprint paper-badge">Free</span>
+            </div>
+            <div class="paper-actions">
+              <a href="assets/papers/mathematics-standard-launch-paper.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open Paper<span class="sr-only"> (opens in a new tab)</span></a>
+              <a href="assets/papers/mathematics-standard-launch-paper.pdf" class="btn btn-secondary" download aria-label="Download PDF: Mathematics Standard — Launch Paper">Download</a>
+            </div>
+          </article>
+          <article class="card paper-card" data-paper-id="math-standard-set-1" data-paper-access="free">
+            <div class="paper-header">
+              <div>
+                <h2 class="paper-title">Mathematics Standard — Set 1</h2>
+                <p class="paper-meta">Mathematics · 2027 · 80 marks · 180 min</p>
+              </div>
+              <span class="badge badge-fill badge-blueprint paper-badge">Free</span>
             </div>
             <div class="paper-actions">
               <a href="papers.html" class="btn btn-secondary">Preview</a>
             </div>
           </article>
-          <article class="card paper-card">
+          <article class="card paper-card" data-paper-id="science-set-1" data-paper-access="free">
             <div class="paper-header">
               <div>
-                <h3 class="paper-title">Science — Set 1</h3>
+                <h2 class="paper-title">Science — Set 1</h2>
                 <p class="paper-meta">Science · 2027 · 80 marks · 180 min</p>
               </div>
-              <span class="badge badge-fill badge-blueprint paper-badge">Open</span>
+              <span class="badge badge-fill badge-blueprint paper-badge">Free</span>
             </div>
             <div class="paper-actions">
               <a href="papers.html" class="btn btn-secondary">Preview</a>
             </div>
           </article>
-          <article class="card paper-card">
+          <article class="card paper-card" data-paper-id="math-standard-set-2" data-paper-access="paid">
             <div class="paper-header">
               <div>
-                <h3 class="paper-title">Mathematics Standard — Set 2</h3>
+                <h2 class="paper-title">Mathematics Standard — Set 2</h2>
                 <p class="paper-meta">Mathematics · 2027 · 80 marks · 180 min</p>
               </div>
-              <span class="badge badge-outline paper-badge">Protected</span>
+              <span class="badge badge-outline paper-badge">Paid</span>
             </div>
             <div class="paper-actions">
               <a href="login.html" class="btn btn-primary">Login to Access</a>
@@ -103,5 +132,6 @@
   </footer>
 
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/papers.js"></script>
 </body>
 </html>

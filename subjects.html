@@ -3,6 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FAF9F6">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    document.documentElement.classList.add('js');
+    (function () {
+      try {
+        var stored = localStorage.getItem('score-ai-theme');
+        var dark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) {
+          document.documentElement.classList.add('dark');
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', '#0B0B0A');
+        }
+      } catch (error) {}
+    })();
+  </script>
   <meta name="description" content="Score AI Subjects - Explore all CBSE Class 10 subjects with chapters and practice questions.">
   <title>Subjects — Score AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,7 +71,7 @@
         <div class="card-grid">
           <article class="card card-subject">
             <div class="card-content">
-              <h3 class="card-title">Mathematics</h3>
+              <h2 class="card-title">Mathematics</h2>
               <p class="card-description">Algebra, Geometry, Trigonometry, Statistics, and Probability.</p>
             </div>
             <div class="card-footer">
@@ -65,7 +81,7 @@
           </article>
           <article class="card card-subject">
             <div class="card-content">
-              <h3 class="card-title">Science</h3>
+              <h2 class="card-title">Science</h2>
               <p class="card-description">Physics, Chemistry, Biology — concepts, experiments, and applications.</p>
             </div>
             <div class="card-footer">
@@ -75,7 +91,7 @@
           </article>
           <article class="card card-subject">
             <div class="card-content">
-              <h3 class="card-title">Social Science</h3>
+              <h2 class="card-title">Social Science</h2>
               <p class="card-description">History, Geography, Political Science, and Economics.</p>
             </div>
             <div class="card-footer">
@@ -85,7 +101,7 @@
           </article>
           <article class="card card-subject">
             <div class="card-content">
-              <h3 class="card-title">English</h3>
+              <h2 class="card-title">English</h2>
               <p class="card-description">Literature, Grammar, Writing skills, and Reading comprehension.</p>
             </div>
             <div class="card-footer">
@@ -95,7 +111,7 @@
           </article>
           <article class="card card-subject">
             <div class="card-content">
-              <h3 class="card-title">Hindi</h3>
+              <h2 class="card-title">Hindi</h2>
               <p class="card-description">Hindi Literature, Grammar, and Composition.</p>
             </div>
             <div class="card-footer">
@@ -105,7 +121,7 @@
           </article>
           <article class="card card-subject">
             <div class="card-content">
-              <h3 class="card-title">Information Technology</h3>
+              <h2 class="card-title">Information Technology</h2>
               <p class="card-description">Digital literacy, IT applications, and practical skills.</p>
             </div>
             <div class="card-footer">

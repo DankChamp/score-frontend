@@ -3,6 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FAF9F6">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    document.documentElement.classList.add('js');
+    (function () {
+      try {
+        var stored = localStorage.getItem('score-ai-theme');
+        var dark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) {
+          document.documentElement.classList.add('dark');
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', '#0B0B0A');
+        }
+      } catch (error) {}
+    })();
+  </script>
   <meta name="description" content="Score AI Admin AI - Generate content with AI.">
   <title>Admin AI — Score AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,7 +60,7 @@
         <div class="card-grid">
           <article class="card">
             <div class="card-content">
-              <h3 class="card-title">Generate Questions</h3>
+              <h2 class="card-title">Generate Questions</h2>
               <p class="card-description" style="margin-top: var(--space-3);">Create practice questions for any subject and chapter with AI.</p>
               <div class="card-footer" style="justify-content: flex-start; border-top: none; padding-top: var(--space-4);">
                 <button class="btn btn-primary">Generate Questions</button>
@@ -53,7 +69,7 @@
           </article>
           <article class="card">
             <div class="card-content">
-              <h3 class="card-title">Generate MCQs</h3>
+              <h2 class="card-title">Generate MCQs</h2>
               <p class="card-description" style="margin-top: var(--space-3);">Create multiple choice questions with explanations and priority scores.</p>
               <div class="card-footer" style="justify-content: flex-start; border-top: none; padding-top: var(--space-4);">
                 <button class="btn btn-primary">Generate MCQs</button>
@@ -62,7 +78,7 @@
           </article>
           <article class="card">
             <div class="card-content">
-              <h3 class="card-title">Generate Explanations</h3>
+              <h2 class="card-title">Generate Explanations</h2>
               <p class="card-description" style="margin-top: var(--space-3);">Create detailed step-by-step solutions for existing questions.</p>
               <div class="card-footer" style="justify-content: flex-start; border-top: none; padding-top: var(--space-4);">
                 <button class="btn btn-primary">Generate Explanations</button>
@@ -71,7 +87,7 @@
           </article>
           <article class="card">
             <div class="card-content">
-              <h3 class="card-title">Generate Sample Papers</h3>
+              <h2 class="card-title">Generate Sample Papers</h2>
               <p class="card-description" style="margin-top: var(--space-3);">Create full sample papers matching CBSE exam patterns.</p>
               <div class="card-footer" style="justify-content: flex-start; border-top: none; padding-top: var(--space-4);">
                 <button class="btn btn-primary">Generate Papers</button>

@@ -3,6 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FAF9F6">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    document.documentElement.classList.add('js');
+    (function () {
+      try {
+        var stored = localStorage.getItem('score-ai-theme');
+        var dark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) {
+          document.documentElement.classList.add('dark');
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', '#0B0B0A');
+        }
+      } catch (error) {}
+    })();
+  </script>
   <meta name="description" content="Score AI Codi AI - Your AI study companion.">
   <title>Codi AI — Score AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,7 +101,7 @@
 
             <form id="chat-form" class="flex gap-3" style="position: relative;">
               <div style="flex: 1; position: relative;">
-                <input type="text" id="chat-input" class="field-input" placeholder="Ask Codi anything..." style="padding-right: 48px;">
+                <input type="text" id="chat-input" class="field-input" placeholder="Ask Codi anything..." aria-label="Ask Codi anything" style="padding-right: 48px;">
                 <button type="submit" class="btn btn-primary btn-icon" style="position: absolute; right: 4px; top: 50%; transform: translateY(-50%);" aria-label="Send message">
                   <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
                 </button>
@@ -94,10 +110,10 @@
           </div>
         </article>
 
-        <div class="card-grid" style="max-width: 48rem; margin: 0 auto;">
+        <div class="card-grid codi-grid">
           <article class="card">
             <div class="card-content">
-              <h3 class="card-title">Quick Actions</h3>
+              <h2 class="card-title">Quick Actions</h2>
               <div class="flex flex-col gap-3 mt-4">
                 <button class="btn btn-secondary w-full justify-start">Generate Practice Questions</button>
                 <button class="btn btn-secondary w-full justify-start">Create Study Plan</button>
@@ -108,7 +124,7 @@
           </article>
           <article class="card">
             <div class="card-content">
-              <h3 class="card-title">Recent Conversations</h3>
+              <h2 class="card-title">Recent Conversations</h2>
               <ul class="space-y-3 mt-4">
                 <li class="p-3 border border-graphite rounded-lg hover:border-graphite-hover transition-colors cursor-pointer">
                   <p class="font-medium">Euclid's Division Algorithm</p>

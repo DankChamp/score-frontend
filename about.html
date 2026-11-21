@@ -3,6 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FAF9F6">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    document.documentElement.classList.add('js');
+    (function () {
+      try {
+        var stored = localStorage.getItem('score-ai-theme');
+        var dark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) {
+          document.documentElement.classList.add('dark');
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', '#0B0B0A');
+        }
+      } catch (error) {}
+    })();
+  </script>
   <meta name="description" content="About Score AI - A serious educational platform for serious students preparing for CBSE Class 10 2027 Board Examination.">
   <title>About — Score AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,17 +63,17 @@
   <main class="site-main" role="main">
     <section class="section" aria-labelledby="about-title">
       <div class="container">
-        <div class="section-header" style="max-width: 48rem; margin: 0 auto; text-align: center;">
+        <div class="section-header about-hero">
           <span class="section-eyebrow">About Score AI</span>
           <h1 id="about-title" class="section-title display-4">About Score AI</h1>
           <p class="section-lead">A serious educational platform for serious students.</p>
         </div>
 
-        <div style="max-width: 48rem; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-6);">
+        <div class="about-stack">
           <article class="card">
             <div class="card-content">
               <h2 class="card-title">Our Mission</h2>
-              <p class="body-lg" style="color: var(--graphite); margin-top: var(--space-3);">
+              <p class="body-lg about-text">
                 Score AI is built to help CBSE Class 10 students prepare effectively for their 2027 Board Examination.
                 We believe in smart preparation — focusing on high-priority topics, practicing with quality questions,
                 and tracking progress systematically. The exam date is fixed; your preparation shouldn't be.
@@ -68,12 +84,12 @@
           <article class="card">
             <div class="card-content">
               <h2 class="card-title">Founders</h2>
-              <div class="card-grid" style="grid-template-columns: 1fr; gap: var(--space-4); margin-top: var(--space-4);">
-                <div style="text-align: center; padding: var(--space-4);">
+              <div class="card-grid founders-grid">
+                <div class="founder">
                   <p class="heading-3">Void</p>
                   <p class="caption text-muted">Co-founder</p>
                 </div>
-                <div style="text-align: center; padding: var(--space-4);">
+                <div class="founder">
                   <p class="heading-3">Codi</p>
                   <p class="caption text-muted">Co-founder</p>
                 </div>
@@ -84,7 +100,7 @@
           <article class="card">
             <div class="card-content">
               <h2 class="card-title">Team</h2>
-              <p class="body-lg" style="color: var(--graphite); margin-top: var(--space-3);">
+              <p class="body-lg about-text">
                 Built by VOIDX — a team dedicated to creating premium educational technology.
               </p>
             </div>
@@ -93,7 +109,7 @@
           <article class="card">
             <div class="card-content">
               <h2 class="card-title">Target</h2>
-              <p class="body-lg" style="color: var(--graphite); margin-top: var(--space-3);">
+              <p class="body-lg about-text">
                 CBSE Class 10 students preparing for the 2027 Board Examination.
               </p>
             </div>
