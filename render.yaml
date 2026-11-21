@@ -1,0 +1,12 @@
+# Render blueprint for the Score AI public frontend (static site)
+# Create a "Web Service" on Render and connect this repo; Render will
+# detect env: static and serve the files directly. No build step needed.
+services:
+  - type: web
+    name: score-ai-frontend
+    env: static
+    # Root of the repo is the publish directory (index.html lives here)
+    publishDirectory: "."
+    # No build command for a plain HTML/CSS/JS site
+    buildCommand: ""
+    # Keep the default health check path; static sites don't require one
