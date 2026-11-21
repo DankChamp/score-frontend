@@ -164,7 +164,7 @@
     const container = document.querySelector('[data-countdown]');
     if (!container) return;
 
-    const examDate = new Date('2027-03-01T09:00:00+05:30').getTime();
+    const examDate = new Date('2027-02-17T09:00:00+05:30').getTime();
 
     container.setAttribute('role', 'timer');
     container.removeAttribute('aria-live');
